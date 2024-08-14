@@ -1,5 +1,7 @@
 # Full-Stack Challenge - React
 
+![homePage](/public//PageInitial.jpg)
+
 ## Parte 1: Projeto Front-End
 
 `Objetivo`
