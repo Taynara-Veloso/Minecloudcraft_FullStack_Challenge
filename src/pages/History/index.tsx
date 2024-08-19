@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { GameSessionContext } from "../../contexts/SessionContext"
 
 export function History(){
-  const { session } = useContext(GameSessionContext)
+  const { sessions } = useContext(GameSessionContext)
 
   return (
     <div className="flex flex-1 flex-col w-[900px] m-auto my-12">
@@ -27,9 +27,9 @@ export function History(){
             </tr>
           </thead>
           <tbody>
-            {session.map((listSessions) => {
+            {sessions.map((listSessions, index) => {
               return (
-                <tr key={listSessions.sessionId} className="bg-[--gray-800] border-b-4 border-[--gray-700] text-base">
+                <tr key={index} className="bg-[--gray-800] border-b-4 border-[--gray-700] text-base">
                   <th scope="row" className="px-6 py-4 font-light whitespace-nowrap text-white truncate text-center border-r-4 border-[--gray-700]">
                     {listSessions.hostname}
                   </th>
