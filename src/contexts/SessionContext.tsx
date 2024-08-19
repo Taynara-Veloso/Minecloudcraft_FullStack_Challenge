@@ -1,5 +1,4 @@
-import { createContext, ReactNode, useReducer } from "react"
-import { Session } from "../reducers/gameSession/reducer";
+import { createContext, ReactNode, useState } from "react"
 
 interface CreateSessionData {
   hostname: string;
@@ -9,8 +8,8 @@ interface CreateSessionData {
 }
 
 interface SessionContextType {
-  session: Session[]
-  createNewSession: (data: CreateSessionData) => void
+  sessions: CreateSessionData[];
+  createNewSession: (data: CreateSessionData) => void;
 }
 
 export const GameSessionContext = createContext({} as SessionContextType)
@@ -19,24 +18,16 @@ interface SessionContextProviderProps {
   children: ReactNode
 }
 
-export function SessionContextProvider({ children }: SessionContextProviderProps) {
-  const [state, dispatch] = useReducer()
+export const SessionContextProvider: React.FC<SessionContextProviderProps> = ({ children }) => {
+  const [sessions, setSessions] = useState<CreateSessionData[]>([]);
 
   function createNewSession(data: CreateSessionData){
-
-    const newSession: Session = {
-      sessionId,
-      hostname: data.hostname,
-      players: data.players,
-      gamemap: data.gamemap,
-      gamemode: data.gamemode,
-    }
-
-    dispatch(addNewSession(newSession))
+    console.log('sessionData:', data)
+    setSessions(prevSessions => [...prevSessions, data])
   }
 
   return (
-    <GameSessionContext.Provider value={{createNewSession}}>
+    <GameSessionContext.Provider value={{createNewSession, sessions}}>
       {children}
     </GameSessionContext.Provider>
   )
