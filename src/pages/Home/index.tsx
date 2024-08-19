@@ -45,7 +45,7 @@ export function Home(){
       <FormProvider {...newGameSessionForm}>
         <NewSessionForm/>
       </FormProvider>
-      <button onSubmit={handleSubmit(handleCreateNewGameSession)} disabled={isSubmitDisabled} className="w-[610px] min-w-96 m-auto bg-[--green-600] text-white rounded-2xl py-3 shadow-shape">
+      <button onSubmit={handleSubmit(handleCreateNewGameSession)} disabled={isSubmitDisabled} className="w-[610px] min-w-96 m-auto bg-[--green-600] text-white rounded-2xl py-3 shadow-shape :hover">
         Create new game session
       </button>
     </form>

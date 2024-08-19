@@ -37,9 +37,9 @@ Crie um aplicativo React com Vite que inclua:
 
 `Diretrizes de envio:`
 
-  - Crie um novo repositório GitHub para o projeto front-end.
-  - Inclua um README.md com instruções sobre como executar o aplicativo localmente.
-  - Certifique-se de que seu projeto esteja bem organizado e siga as melhores práticas.
+  [x] Crie um novo repositório GitHub para o projeto front-end.
+  [ ] Inclua um README.md com instruções sobre como executar o aplicativo localmente.
+  [ ] Certifique-se de que seu projeto esteja bem organizado e siga as melhores práticas.
 
 ### Ferramentas Utilizadas
 

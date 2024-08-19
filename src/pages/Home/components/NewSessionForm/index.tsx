@@ -19,39 +19,36 @@ export function NewSessionForm(){
           </div>
 
           <div className="flex flex-col px-10">
-            <label htmlFor="amountPlayers" className="flex justify-center text-2xl font-semibold pb-2">Players</label>
+            <label htmlFor="players" className="flex justify-center text-2xl font-semibold pb-2">Players</label>
             <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape" 
               type="number" 
-              id="amountPlayers"
+              id="players"
               placeholder="Add number of players 1-4" 
+              min={1}
+              max={4}
               required 
-              {...register('amountPlayers')}/>
+              {...register('players')}/>
           </div>
 
           <div className="flex flex-col px-10 relative">
-            <label htmlFor="eventMap" className="flex justify-center text-2xl font-semibold pb-2">Map</label>
+            <label htmlFor="gamemap" className="flex justify-center text-2xl font-semibold pb-2">Map</label>
             <CaretDown className="size-5 pointer-events-none absolute top-3/4 transform -translate-y-1/2 right-14"/>
-            <select className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape"  
-              id="eventMap" 
+            <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape"  
+              id="gamemap" 
               required 
-              {...register('eventMap')}
-            >
-              <option value="Cave">Cave</option>
-              <option value="City">City</option>
-              <option value="Forest">Forest</option>
-              <option value="Random">Random</option>
-            </select>
+              {...register('gamemap')}
+            />
           </div>
 
           <div className="flex flex-col px-10 relative">
-            <label htmlFor="eventMode" className="flex justify-center text-2xl font-semibold pb-2">Mode</label>
+            <label htmlFor="gamemode" className="flex justify-center text-2xl font-semibold pb-2">Mode</label>
             <CaretDown className="size-5 pointer-events-none absolute top-3/4 transform -translate-y-1/2 right-14"/>
             <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape" 
               type="text" 
-              id="eventMode"
+              id="gamemode"
               placeholder="Choose mode" 
               required 
-              {...register('eventMode')}/>
+              {...register('gamemode')}/>
           </div>
         </div>
       </fieldset>
