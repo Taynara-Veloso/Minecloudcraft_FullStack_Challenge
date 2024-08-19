@@ -1,4 +1,3 @@
-import { CaretDown } from "phosphor-react";
 import { useFormContext } from "react-hook-form";
 
 export function NewSessionForm(){
@@ -30,9 +29,8 @@ export function NewSessionForm(){
               {...register('players', { valueAsNumber: true })}/>
           </div>
 
-          <div className="flex flex-col px-10 relative">
+          <div className="flex flex-col px-10">
             <label htmlFor="gamemap" className="flex justify-center text-2xl font-semibold pb-2">Map</label>
-            <CaretDown className="size-5 pointer-events-none absolute top-3/4 transform -translate-y-1/2 right-14"/>
             <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape"  
               id="gamemap" 
               placeholder="Enter map"
@@ -41,9 +39,8 @@ export function NewSessionForm(){
             />
           </div>
 
-          <div className="flex flex-col px-10 relative">
+          <div className="flex flex-col px-10">
             <label htmlFor="gamemode" className="flex justify-center text-2xl font-semibold pb-2">Mode</label>
-            <CaretDown className="size-5 pointer-events-none absolute top-3/4 transform -translate-y-1/2 right-14"/>
             <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape" 
               type="text" 
               id="gamemode"
