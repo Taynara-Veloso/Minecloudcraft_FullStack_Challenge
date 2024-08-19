@@ -7,9 +7,9 @@
 `Objetivo`
 Crie um aplicativo React com Vite que inclua:
 
-[ ] Um formulário para criar uma nova sessão de jogo.
+[x] Um formulário para criar uma nova sessão de jogo.
 
-[ ] Uma visualização de lista exibindo todas as sessões de jogo.
+[x] Uma visualização de lista exibindo todas as sessões de jogo.
 
 [ ] Interação com o back-end para persistir dados.
 
@@ -46,3 +46,18 @@ Crie um aplicativo React com Vite que inclua:
 - React
 - Vite.js
 - Tailwind
+
+### How to use
+
+[✔️] When downloading the repository, go to the install node_modules folder
+```
+npm install
+```
+[✔️] open the terminal and to run it execute the command:
+```
+npm run dev
+```
+[✔️] open in browser:
+```
+http://localhost:5173/
+```
