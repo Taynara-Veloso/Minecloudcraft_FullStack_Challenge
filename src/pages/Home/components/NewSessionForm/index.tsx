@@ -27,7 +27,7 @@ export function NewSessionForm(){
               min={1}
               max={4}
               required 
-              {...register('players')}/>
+              {...register('players', { valueAsNumber: true })}/>
           </div>
 
           <div className="flex flex-col px-10 relative">
@@ -35,6 +35,7 @@ export function NewSessionForm(){
             <CaretDown className="size-5 pointer-events-none absolute top-3/4 transform -translate-y-1/2 right-14"/>
             <input className="h-12 rounded-xl bg-[--gray-900] text-center shadow-shape"  
               id="gamemap" 
+              placeholder="Enter map"
               required 
               {...register('gamemap')}
             />

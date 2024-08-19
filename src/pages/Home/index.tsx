@@ -18,34 +18,34 @@ const newFormGameSessionValidationSchema = zod.object({
 type CreateSessionData = zod.infer<typeof newFormGameSessionValidationSchema>
 
 export function Home(){
-  const { createNewSession } = useContext(GameSessionContext)
+  const { createNewSession } = useContext(GameSessionContext);
 
   const newGameSessionForm = useForm<CreateSessionData>({
     resolver: zodResolver(newFormGameSessionValidationSchema),
     defaultValues: {
       hostname: '',
-      players: 0,
-      gamemap: 'Choose the map',
-      gamemode: 'Choose mode',
+      players: 1,
+      gamemap: '',
+      gamemode: '',
     },
-  })
+  });
 
-  const { handleSubmit, watch, reset } = newGameSessionForm
-
-  const hostnameWatch = watch('hostname')
-  const isSubmitDisabled = !hostnameWatch
+  const { handleSubmit, reset } = newGameSessionForm;
 
   function handleCreateNewGameSession(data: CreateSessionData){
+    console.log('formData', data)
     createNewSession(data)
     reset()
   }
 
   return (
-    <form className="flex flex-col justify-center m-auto">
+    <form className="flex flex-col justify-center m-auto" onSubmit={handleSubmit(handleCreateNewGameSession)}>
       <FormProvider {...newGameSessionForm}>
         <NewSessionForm/>
       </FormProvider>
-      <button onSubmit={handleSubmit(handleCreateNewGameSession)} disabled={isSubmitDisabled} className="w-[610px] min-w-96 m-auto bg-[--green-600] text-white rounded-2xl py-3 shadow-shape :hover">
+      <button 
+        type="submit" 
+        className="w-[610px] min-w-96 m-auto bg-[--green-600] text-white rounded-2xl py-3 shadow-shape :hover">
         Create new game session
       </button>
     </form>
