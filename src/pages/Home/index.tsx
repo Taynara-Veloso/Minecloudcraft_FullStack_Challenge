@@ -32,9 +32,30 @@ export function Home(){
 
   const { handleSubmit, reset } = newGameSessionForm;
 
-  function handleCreateNewGameSession(data: CreateSessionData){
+  const handleCreateNewGameSession = async (data: CreateSessionData) => {
     console.log('formData', data)
     createNewSession(data)
+
+    /* try {
+      const response = await fetch("https://1jz615yn7a.execute-api.us-east-1.amazonaws.com/sessions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar os dados");
+      }
+
+      const result = await response.json();
+      console.log("Resposta do servidor:", result);
+      alert("Sessão criada com sucesso!");
+    } catch (error) {
+      console.error("Erro:", error);
+      alert("Houve um erro ao criar a sessão. Tente novamente.");
+    } */
     reset()
   }
 
