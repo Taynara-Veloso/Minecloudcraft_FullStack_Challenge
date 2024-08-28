@@ -41,7 +41,7 @@ export function Home(){
     
   }
 
-  const handleFormSubmitAndRedirect = async () => {
+  /* const handleFormSubmitAndRedirect = async () => {
     const form = document.getElementById('formSession') as HTMLFormElement;
     
     if (form) {
@@ -61,7 +61,7 @@ export function Home(){
         console.error('Error submitting form:', error);
       }
     }
-  };
+  }; */
 
   return (
     <form onSubmit={handleSubmit(handleCreateNewGameSession)} method='post' id="formSession" action="https://1jz615yn7a.execute-api.us-east-1.amazonaws.com" className="flex flex-col justify-center m-auto">
@@ -111,7 +111,7 @@ export function Home(){
         type="submit"
         formMethod='post'
         form='formSession'
-        onClick={handleSubmit(handleFormSubmitAndRedirect)}
+        /* onClick={handleSubmit(handleFormSubmitAndRedirect)} */
         className="w-[610px] min-w-96 m-auto bg-[--green-600] text-white rounded-2xl py-3 shadow-shape :hover"
       >
         Create new game session

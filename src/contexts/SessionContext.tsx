@@ -17,7 +17,6 @@ interface SessionContextType {
   sessions: CreateSessionData[];
   currentSession: CreateSessionData | undefined;
   gameSessionId: string | null;
-  API_URL: string;
   createNewSession: (data: CreateSessionData) => void;
 }
 
@@ -64,7 +63,7 @@ export const SessionContextProvider: React.FC<SessionContextProviderProps> = ({ 
   console.log(currentSession)
 
   return (
-    <GameSessionContext.Provider value={{createNewSession, sessions, currentSession, gameSessionId, API_URL}}>
+    <GameSessionContext.Provider value={{createNewSession, sessions, currentSession, gameSessionId}}>
       {children}
     </GameSessionContext.Provider>
   )
